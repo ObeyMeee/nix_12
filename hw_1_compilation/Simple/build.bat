@@ -1,0 +1,1 @@
+javac -sourcepath ./src -d build/classes -cp libs/commons-lang3-3.12.0.jar;libs/commons-math3-3.6.1.jar src/ua/com/alevel/classes/MyNumber.java src/ua/com/alevel/classes/IntegerUtils.java src/ua/com/alevel/Main.java

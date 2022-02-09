@@ -1,0 +1,1 @@
+java -cp libs/*;build/classes ua.com.alevel.Main

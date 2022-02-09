@@ -7,9 +7,23 @@
     <groupId>ua.com.alevel</groupId>
     <artifactId>nix_12</artifactId>
     <version>1.0</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>16</source>
+                    <target>16</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
     <packaging>pom</packaging>
     <modules>
-
+        <module>hw_2_base_types</module>
+        <module>hw_1_compilation</module>
+        <module>hw_1_compilation/Maven</module>
     </modules>
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
