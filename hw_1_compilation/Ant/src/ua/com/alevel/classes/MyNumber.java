@@ -1,5 +1,7 @@
 package ua.com.alevel.classes;
+
 public class MyNumber {
+
     private int number;
 
     public int getNumber() {

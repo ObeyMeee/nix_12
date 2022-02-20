@@ -10,18 +10,19 @@ import java.io.InputStreamReader;
 import java.util.UUID;
 
 public class ProgramStart {
+
     private static final BufferedReader reader = new BufferedReader
             (new InputStreamReader(System.in));
     private static final UserService userService = new UserService();
 
     // Creating instance of ProgramStart class is useless
-    private ProgramStart(){
+    private ProgramStart() {
 
     }
 
     public static void run() throws IOException {
         greeting();
-        while (true){
+        while (true) {
             navigate();
             caseLogic();
         }
@@ -34,7 +35,7 @@ public class ProgramStart {
         reader.readLine();
     }
 
-    private static void navigate(){
+    private static void navigate() {
         System.out.println();
         System.out.println("Press 1 to create new user");
         System.out.println("Press 2 to delete user");
@@ -44,11 +45,12 @@ public class ProgramStart {
         System.out.println("Press 0 to exit");
         System.out.print("\nYour input ==> ");
     }
+
     private static void caseLogic() throws IOException {
         String choice = reader.readLine();
         System.out.println();
 
-        switch (choice){
+        switch (choice) {
             case "1" -> create();
             case "2" -> delete();
             case "3" -> update();
@@ -81,7 +83,7 @@ public class ProgramStart {
         System.out.println("Press 2 to delete by number");
         System.out.print("Your input ==> ");
         String choice = reader.readLine();
-        switch (choice){
+        switch (choice) {
             case "1" -> {
                 System.out.print("Input login ==> ");
                 String login = reader.readLine();
@@ -99,7 +101,7 @@ public class ProgramStart {
         System.out.print("Input number of user you want to update ==> ");
         int number = Integer.parseInt(reader.readLine());
         User[] users = userService.getAll();
-        if(number <= 0 || number > users.length){
+        if (number <= 0 || number > users.length) {
             System.out.println("Incorrect number!");
             return;
         }
@@ -116,14 +118,14 @@ public class ProgramStart {
         String password = users[index].password();
         Role role = users[index].role();
         System.out.print("Input new info: ");
-       switch (choice){
-           case "1" -> email = reader.readLine();
-           case "2" -> login = reader.readLine();
-           case "3" -> password = reader.readLine();
-           default -> System.out.println("Incorrect input");
-       }
-       User updateUser = new User(id, email, login, password, role);
-       users[index] = updateUser;
+        switch (choice) {
+            case "1" -> email = reader.readLine();
+            case "2" -> login = reader.readLine();
+            case "3" -> password = reader.readLine();
+            default -> System.out.println("Incorrect input");
+        }
+        User updateUser = new User(id, email, login, password, role);
+        users[index] = updateUser;
     }
 
     private static void find() throws IOException {
@@ -136,7 +138,7 @@ public class ProgramStart {
     private static void getAll() {
         System.out.printf("%18s %15s %15s %6s%n", "email", "login", "password", "role");
         User[] users = userService.getAll();
-        for (int i = 0;i < users.length; i++) {
+        for (int i = 0; i < users.length; i++) {
             System.out.println(i + 1 + ". " + users[i]);
         }
     }

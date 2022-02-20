@@ -4,7 +4,9 @@ import ua.com.alevel.DAO.UserDAO;
 import ua.com.alevel.entity.User;
 
 public class UserDAOImpl implements UserDAO {
+
     private User[] users = new User[0];
+
     @Override
     public void add(User user) {
         User[] tempUsers = new User[users.length + 1];
@@ -19,7 +21,7 @@ public class UserDAOImpl implements UserDAO {
     @Override
     public void delete(String login) {
         for (int i = 0; i < users.length; i++) {
-            if(users[i].login().equals(login)){
+            if (users[i].login().equals(login)) {
                 delete(i + 1);
                 break;
             }
@@ -42,7 +44,7 @@ public class UserDAOImpl implements UserDAO {
     @Override
     public void update(User user) {
         for (int i = 0; i < users.length; i++) {
-            if(users[i].id().equals(user.id())){
+            if (users[i].id().equals(user.id())) {
                 users[i] = user;
                 break;
             }
