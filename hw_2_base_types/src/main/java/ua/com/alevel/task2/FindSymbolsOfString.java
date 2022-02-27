@@ -14,6 +14,7 @@ import java.util.regex.Pattern;
 //      латиницы/кириллицы и сортирует их, указывая количество вхождений каждого символа
 
 public class FindSymbolsOfString {
+
     public static void main(String[] args) {
         System.out.println("Welcome to task 2!");
 
@@ -21,18 +22,18 @@ public class FindSymbolsOfString {
         Pattern pattern = Pattern.compile("[A-Za-zА-Яа-я]");
         Matcher matcher = pattern.matcher(string);
         Map<String, Integer> map = new HashMap<>();
-        while(matcher.find()){
+        while (matcher.find()) {
             String symbol = matcher.group();
-            if(!map.containsKey(symbol)){
+            if (!map.containsKey(symbol)) {
                 map.put(symbol, 1);
-            }else{
+            } else {
                 int currentAmountOfSymbols = map.get(symbol);
-                map.put(symbol,++currentAmountOfSymbols);
+                map.put(symbol, ++currentAmountOfSymbols);
             }
         }
         map.entrySet()
                 .stream()
-                 .sorted((o1, o2) -> o2.getValue() - o1.getValue())
+                .sorted((o1, o2) -> o2.getValue() - o1.getValue())
                 .forEach(entry -> System.out.printf("%s - %d%n", entry.getKey(), entry.getValue()));
     }
 }

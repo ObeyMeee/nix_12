@@ -1,11 +1,12 @@
 package ua.com.alevel.classes;
+
 import org.apache.commons.lang3.*;
+
 public class IntegerUtils {
-    private IntegerUtils(){
 
-    }
+    private IntegerUtils() { }
 
-    public static int addRandomNumber(MyNumber number){
+    public static int addRandomNumber(MyNumber number) {
         return number.getNumber() + RandomUtils.nextInt();
     }
 }

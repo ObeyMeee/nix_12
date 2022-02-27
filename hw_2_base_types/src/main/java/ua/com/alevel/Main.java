@@ -9,7 +9,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Main {
+
     private static final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
     public static void main(String[] args) {
         start();
     }
@@ -40,7 +42,7 @@ public class Main {
         System.out.println();
         System.out.print("Your choice ==> ");
     }
-    
+
     private static void caseLogic() throws IOException {
         String choice = reader.readLine();
 
@@ -55,7 +57,6 @@ public class Main {
             default -> System.out.println("Try again");
         }
     }
-
 
     public static String inputString(String enteredType) {
         System.out.print("Please, enter " + enteredType + " ==> ");

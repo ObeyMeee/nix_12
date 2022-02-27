@@ -6,6 +6,7 @@ import ua.com.alevel.Main;
 //их сумму
 
 public class CalculateSumOfNumber {
+
     public static void main(String[] args) {
         System.out.println("Welcome to task 1!");
         String string = Main.inputString("string");
@@ -16,12 +17,11 @@ public class CalculateSumOfNumber {
     private static int getSumNumbers(String string) {
         int sum = 0;
         char[] inputString = string.toCharArray();
-        for (char symbol: inputString) {
-            if(symbol >= '0' && symbol <= '9'){
+        for (char symbol : inputString) {
+            if (symbol >= '0' && symbol <= '9') {
                 sum += symbol - '0';
             }
         }
         return sum;
     }
-
 }

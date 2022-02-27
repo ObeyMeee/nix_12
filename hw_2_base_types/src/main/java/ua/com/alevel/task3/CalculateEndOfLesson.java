@@ -10,11 +10,12 @@ import ua.com.alevel.Main;
 //Определите, когда заканчивается указанный урок.
 
 public class CalculateEndOfLesson {
-    public static void main(String[] args){
+
+    public static void main(String[] args) {
         System.out.println("Welcome to task 3!");
         int numberOfLesson = Integer.parseInt(
                 Main.inputString("number of lesson"));
-         // znanija.com/task/33131013
+        // znanija.com/task/33131013
         int hours = 9;
         int minutes = hours * 60;
 
@@ -23,8 +24,8 @@ public class CalculateEndOfLesson {
         hours = endInMinutes / 60;
         minutes = endInMinutes % 60;
         System.out.println("The end of the lesson " + numberOfLesson + " ==> "
-                + StringUtils.leftPad(String.valueOf(hours) , 2, "0")
-                + ":" + StringUtils.leftPad(String.valueOf(minutes) , 2, "0"));
+                + StringUtils.leftPad(String.valueOf(hours), 2, "0")
+                + ":" + StringUtils.leftPad(String.valueOf(minutes), 2, "0"));
     }
 }
 
